@@ -1,0 +1,9 @@
+import cpp
+
+from FunctionCall fCall, Function fcn
+where 
+    fCall.getTarget() = fcn and 
+    fcn.getName() = "memset"
+    and fCall.getArgument(2).getValue() = "0"
+
+select fCall.getBasicBlock()
